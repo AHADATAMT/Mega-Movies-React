@@ -11,7 +11,7 @@ export default class MovieContainer extends Component {
     let { title, id, overview, vote_average, poster_path, release_date } = this.props;
     return (
       <div id={id} className="card mb-2">
-          <img className="card-img-top m-auto" src={'https://image.tmdb.org/t/p/w500' + poster_path} />
+          <img className="card-img-top m-auto" src={'https://image.tmdb.org/t/p/w500' + poster_path}  alt={title}/>
         <div className="card-body">
           <h5 className="card-title">{title}</h5>
           <p className="card-text text-right d-flex justify-content-between">

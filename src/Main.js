@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import FilterContainer from './FilterContainer'
 import MovieContainer from './MovieContainer'
-import SearchBar from './SearchBar'
+import Loading from './Loading'
 
 export default class Main extends Component {
     constructor(props) {
@@ -10,10 +10,10 @@ export default class Main extends Component {
             filterInput: {
                 sort_by: 'popularity.desc',
                 page: 1,
-                release_date: { min: 1990, max: 2019 },
+                release_date: { min: 2000, max: 2019 },
                 vote_average: { min: 0, max: 10 }
             },
-            page: 0,
+            page: 1,
             movies: [],
             total_pages: 0,
             total_results: 0,
@@ -21,7 +21,7 @@ export default class Main extends Component {
         }
     }
 
-    componentDidMount() {
+    componentWillMount() {
         this.getMovieDB();
     }
 
@@ -33,8 +33,7 @@ export default class Main extends Component {
             let apiUrl = 'https://api.themoviedb.org/3/discover/movie?' + queryString;
 
             let response = await fetch(apiUrl);
-            this.setState({ isLoaded: true })
-            if (response.status == 200) {
+            if (response.status === 200) {
                 let data = await response.json();
                 console.log(data);
                 this.setState({
@@ -44,6 +43,7 @@ export default class Main extends Component {
                     total_results: data.total_results,
                 });
             }
+            this.setState({ isLoaded: true })
         } catch (err) {
             alert(err);
         }
@@ -56,34 +56,40 @@ export default class Main extends Component {
                 release_date: filterInput.year,
                 vote_average: filterInput.rate,
                 sort_by: filterInput.sort_by,
-            }
+            },
+            isLoaded: false
         }, () => this.getMovieDB());
     }
-
+    goTo = page => {
+        this.setState({
+            filterInput: { ...this.state.filterInput, page: page },
+            isLoaded: false
+        }, () => {
+            this.getMovieDB();
+        })
+    }
     render() {
-        if (this.state.isLoaded)
-            return (
-                <div className="container-fluid">
-                    <div className="row">
-                        <div className="col-md-3">
-                            <FilterContainer handleFilter={this.handleFilter} />
+        return (
+            <div className="container-fluid">
+                <Loading isLoaded={this.state.isLoaded} />
+                <div className={this.state.isLoaded ? 'row' : 'invisible'}>
+                    <div className="col-12 col-xl-3">
+                        <FilterContainer handleFilter={this.handleFilter} total_pages={this.state.total_pages} goTo={this.goTo} />
+                    </div>
+                    <div className="col-md-9">
+                        <div className="row">
+                            {this.state.movies.map((movie, index) => (
+                                <div className="col-xl-3 col-lg-4" key={index}>
+                                    <MovieContainer {...movie} />
+                                </div>)
+                            )}
                         </div>
-                        <div className="col-md-9">
-                            <div className="row">
-                                {this.state.movies.map((movie, index) => (
-                                    <div className="col-xl-3 col-lg-4" key={index}>
-                                        <MovieContainer {...movie} />
-                                    </div>)
-                                )}
-                            </div>
-                        </div>
+
                     </div>
                 </div>
-            )
-        else
-            return <div className="text-center">
-                <h1 className="m-5">Loading. . . :)</h1>
             </div>
+        )
+
 
     }
 }

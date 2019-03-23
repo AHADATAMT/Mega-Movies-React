@@ -43,3 +43,33 @@ nav {
     border: 1px solid white;
     color: white;
 }
+
+a.page-btn {
+    font-size: 15px;
+    padding: 10px;
+    background: #3f51b5;
+    color: white;
+    margin: 4px 4px;
+    display: inline-block;
+}
+
+a.disableClick{
+    pointer-events: none;
+    cursor: default;
+    text-decoration: none;
+    color: #d0d0d0;
+    background: gray
+}
+#nextBtn, #prevBtn{
+    background: transparent;
+    color: #3f51b5;
+    padding: 0;
+    margin: auto;
+    font-size: 2rem;
+
+}
+a.currentPage{
+    pointer-events: none;
+    cursor: default;
+    background: #1f2d79;
+}

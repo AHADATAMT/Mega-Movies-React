@@ -5,7 +5,7 @@ export default class Header extends Component {
     return (
       <div>
         <nav className="navbar navbar-expand-lg navbar-dark indigo mb-4">
-          <a className="navbar-brand" href="#">MEGA MOVIE</a>
+          <h3 className="navbar-brand">MEGA MOVIE</h3>
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <form className="form-inline ml-auto">
               <div className="md-form my-0">
