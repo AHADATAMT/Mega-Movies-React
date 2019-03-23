@@ -1,0 +1,45 @@
+.card{
+    
+}
+.card-img-top{
+    /* max-width: 250px; */
+    /* height: 350px */
+}
+.active-purple-2 input[type=text]:focus:not([readonly]) {
+    border-bottom: 2px solid white;
+}
+.active-purple .fa, .active-purple-2 .fa {
+    color: white;
+    border-bottom: 2px solid white;
+}
+.form-control{
+    border: none;
+    border-radius: unset;
+    border-bottom: 1px solid  #b9b9b9;
+
+}
+.form-control:focus {
+    border-color: white;
+}
+nav {
+    background-color: #3f51b5;
+}
+#searchInput{
+    background-color: transparent;
+    color: white;
+    
+}
+#searchInput:focus{
+   box-shadow: none;
+}
+#searchInput::placeholder{
+    color: gainsboro;
+}
+#searchBtn {
+    border: 1px solid #b9b9b9;
+    color: #b9b9b9;
+}
+#searchBtn:hover {
+    border: 1px solid white;
+    color: white;
+}
