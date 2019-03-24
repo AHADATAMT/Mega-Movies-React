@@ -3,10 +3,7 @@ import Header from './Header';
 import MovieDetails from './MovieDetails';
 
 export default class Movie extends Component {
-    constructor(props) {
-        super(props);
-
-    }
+   
     componentWillMount() {
         this.getMovieDB();
     }

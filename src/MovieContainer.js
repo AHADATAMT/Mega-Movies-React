@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import 'bootstrap/dist/css/bootstrap.css';
 import { Link } from "react-router-dom";
+import  Poster from "./Poster";
 
 export default class MovieContainer extends Component {
 
@@ -8,11 +9,11 @@ export default class MovieContainer extends Component {
     return overview.slice(0, 100) + '...';
   }
 
-   render() {
+  render() {
     let { title, id, overview, vote_average, poster_path, release_date } = this.props;
     return (
       <div id={id} className="card mb-2">
-        <img className="card-img-top m-auto" src={'https://image.tmdb.org/t/p/w500' + poster_path} alt={title} />
+        <Poster poster_path={poster_path} title={title} />
         <div className="card-body">
           <Link to={'/movie/' + id}><h5 className="card-title">{title}</h5></Link>
           <p className="card-text text-right d-flex justify-content-between">

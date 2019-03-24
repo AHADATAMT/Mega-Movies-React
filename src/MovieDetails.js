@@ -1,9 +1,7 @@
 import React, { Component } from 'react'
 
 export default class MovieDetails extends Component {
-    constructor(props) {
-        super(props);
-    }
+ 
     formatNumber(num) {
         return num.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')
     }
