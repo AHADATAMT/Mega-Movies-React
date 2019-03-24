@@ -40,8 +40,8 @@ const SearchBtn = (props) => (
     <button
       id="searchBtn"
       className="btn btn-outline-white btn-md my-0 ml-sm-2"
-      type='button'
-      onClick={() => { history.push('/search/q=' + props.searchString) }}
+      type='submit'
+      onClick={() => { history.push('/'); history.push('/search/q=' + props.searchString); }} // don't know why
     >
       Search
     </button>
