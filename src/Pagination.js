@@ -56,7 +56,7 @@ export default class Pagination extends Component {
                 {this.state.currentPageArr.map((page, index) =>
                     <PageBtn key={index} {... this.state} index={index} pageNum={page} choosePage={this.choosePage} />
                 )}
-               
+                {/* <span className="py-2">...</span> */}
                 {/* <a className="page-btn" href="#!" onClick={() => this.props.goTo(this.props.total_pages)}>{this.props.total_pages}</a> */}
                 <br className="d-block d-xl-none" />
                 <a id="nextBtn" className={classNameDisable} href="#!" onClick={() => this.nextPage(1)}>

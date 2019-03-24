@@ -106,3 +106,24 @@ a.currentPage{
 .last-page-btn::before {
     content:'...'
 }
+
+.movie-card .card-body{
+    bottom: 0px;
+    background-image:linear-gradient(rgba(0, 0, 0, 0.10),black  70% );
+    color: #cacaca;
+    height: 140px;
+    transition: 0.5s;
+
+}
+.card-title{
+    height: 48px;
+}
+.movie-card .card-body:hover{
+    height: 270px;
+}
+.card {
+    overflow: hidden;
+}
+.card a{
+    color: white
+}
