@@ -1,12 +1,14 @@
 import React, { Component } from 'react'
 import Header from './Header';
 import MovieContainer from './MovieContainer'
+import Pagination from './Pagination'
 
 export default class Search extends Component {
 
     constructor(props) {
         super(props);
         this.state = {
+            currentPage: 1,
             query: '',
             page: 1,
             total_pages: 0,
@@ -21,9 +23,10 @@ export default class Search extends Component {
     getMovieDB = async () => {
         const api_key = '24a6dd0cb86858abd356f876cfedaaca';
         let query = this.props.match.params.q;
+        let currentPage = this.state.currentPage;
         console.log(query);
         try {
-            let apiUrl = `https://api.themoviedb.org/3/search/movie?api_key=${api_key}&query=${query}`;
+            let apiUrl = `https://api.themoviedb.org/3/search/movie?api_key=${api_key}&query=${query}&page=${currentPage}`;
 
             let response = await fetch(apiUrl);
             if (response.status === 200) {
@@ -38,7 +41,13 @@ export default class Search extends Component {
             alert(err);
         }
     }
-
+    goTo = page => {
+        this.setState({
+            currentPage: page,
+        }, () => {
+            this.getMovieDB();
+        })
+    }
     render() {
         return (
             <div>
@@ -56,9 +65,12 @@ export default class Search extends Component {
                                 </div>)
                             )}
                         </div>
+                        <div className="col-12">
+                            <Pagination total_pages={this.state.total_pages} goTo={this.goTo} />
+                        </div>
                     </div>
                 </div>
-            </div >
+            </div>
         )
     }
 }
