@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
+import Poster from "./Poster";
 
 export default class MovieDetails extends Component {
- 
+
     formatNumber(num) {
         return num.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')
     }
@@ -13,7 +14,7 @@ export default class MovieDetails extends Component {
                 <div className="container">
                     <div className="row">
                         <div className="col-5">
-                            <img className="w-100" src={'https://image.tmdb.org/t/p/w500' + poster_path} />
+                            <Poster poster_path={poster_path} title={title} />
                         </div>
                         <div className="col-7">
                             <div className="title mb-5">
@@ -21,7 +22,7 @@ export default class MovieDetails extends Component {
                                 <h6>{tagline}</h6>
                             </div>
                             <div className="detail">
-                            <p><b>Genres:</b> {genres === undefined ? '' : genres.map(genre => genre.name).join(', ')}</p>
+                                <p><b>Genres:</b> {genres === undefined ? '' : genres.map(genre => genre.name).join(', ')}</p>
                                 <p><b>Rate: </b><b>{vote_average}</b>/10 <small>({vote_count === undefined ? '' : this.formatNumber(vote_count)} votes)</small> </p>
                                 <p><b>Budget:</b> ${budget === undefined ? '' : this.formatNumber(budget)}</p>
                                 <p><b>Revenue:</b> ${revenue === undefined ? '' : this.formatNumber(revenue)}</p>

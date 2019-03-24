@@ -9,7 +9,7 @@ export default class Poster extends Component {
         else
             return (
                 <div className="empty-poster text-center">
-                    <h3 className="mt-5">BLANK POSTER</h3>
+                    <h3 className="pt-5">BLANK POSTER</h3>
                 </div>
             )
     }

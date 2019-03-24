@@ -103,3 +103,6 @@ a.currentPage{
     height: 25vw;
     background: grey;
 }
+.last-page-btn::before {
+    content:'...'
+}
