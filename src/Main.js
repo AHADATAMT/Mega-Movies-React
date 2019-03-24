@@ -72,14 +72,14 @@ export default class Main extends Component {
         return (
             <div className="container-fluid">
                 <div className="row">
-                    <div className="col-12 col-sm-3">
+                    <div className="col-12 col-sm-4 col-xl-3">
                         <FilterContainer handleFilter={this.handleFilter} total_pages={this.state.total_pages} goTo={this.goTo} />
                     </div>
-                    <div className="col-md-9">
+                    <div className="col-12 col-sm-8 col-xl-9">
                         <Loading isLoaded={this.state.isLoaded} />
                         <div className={this.state.isLoaded ? 'row' : 'invisible'}>
                             {this.state.movies.map((movie, index) => (
-                                <div className="col-xl-3 col-lg-4" key={index}>
+                                <div className="col-sm-6 col-xl-3 col-lg-4" key={index}>
                                     <MovieContainer {...movie} />
                                 </div>)
                             )}

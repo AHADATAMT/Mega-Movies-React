@@ -48,11 +48,11 @@ export default class Pagination extends Component {
         let prevBtnDisable = this.state.currentPage <= 1 ? 'disableClick page-btn' : 'page-btn';
         let classNameDisable = this.state.currentPage >= this.state.totalPage ? 'disableClick page-btn' : 'page-btn';
         return (
-            <div className="text-center d-flex flex-wrap">
+            <div className="text-center d-xl-flex flex-wrap">
                 <a id="prevBtn" className={prevBtnDisable} href="#! " onClick={() => this.nextPage(-1)}>
                     <i className="fas fa-arrow-circle-left"></i>
                 </a>
-
+                <br className="d-block d-xl-none" />
                 {this.state.currentPageArr.map((page, index) =>
                     <PageBtn key={index} {... this.state} pageNum={page} choosePage={this.choosePage} />
                 )}
@@ -60,7 +60,7 @@ export default class Pagination extends Component {
                 <span className="py-2">...</span>
 
                 <a className="page-btn" href="#!" onClick={() => this.props.goTo(this.props.total_pages)}>{this.props.total_pages}</a>
-
+                <br className="d-block d-xl-none" />
                 <a id="nextBtn" className={classNameDisable} href="#!" onClick={() => this.nextPage(1)}>
                     <i className="fas fa-arrow-circle-right"></i>
                 </a>
