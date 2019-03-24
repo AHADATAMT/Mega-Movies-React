@@ -20,7 +20,7 @@ export default class MovieDetails extends Component {
                         <div className="col-7">
                             <div className="title mb-5">
                                 <h3>{title} <small>({(new Date(release_date)).getFullYear()})</small></h3>
-                                <h5>{tagline}</h5>
+                                <h6>{tagline}</h6>
                             </div>
                             <div className="detail">
                             <p><b>Genres:</b> {genres === undefined ? '' : genres.map(genre => genre.name).join(', ')}</p>

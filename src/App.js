@@ -3,6 +3,8 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Movie from './Movie';
 import Home from './Home';
 import Error from './Error';
+import Search from './Search';
+
 
 
 import 'bootstrap/dist/css/bootstrap.css';
@@ -15,6 +17,7 @@ class App extends Component {
         <Switch>
           <Route path="/" component={Home} exact />
           <Route path="/movie/:id" component={Movie} />
+          <Route path="/search/q=:q" component={Search} />
           <Route component={Error} />
         </Switch>
       </BrowserRouter>
