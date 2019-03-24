@@ -59,8 +59,10 @@ export default class FilterContainer extends Component {
               value={this.state.rate}
               onChange={value => this.onChangeInputRate(value)} />
           </div>
-          <div className="col-12 mb-3">
-            <button onClick={this.SubmitFilterInfo}>
+          <div className="col-12 mb-3 text-center">
+            <button id="applyFilter"
+            className="btn btn-outline-white btn-md my-0 ml-sm-2"
+            onClick={this.SubmitFilterInfo}>
               Apply
           </button>
           </div>

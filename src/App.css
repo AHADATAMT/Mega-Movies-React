@@ -79,3 +79,13 @@ a.currentPage{
         width: 24%
     }
 }
+
+#applyFilter:hover{
+    background: #1f2d79;
+    color: white;
+}
+
+#applyFilter{
+    background: rgba(31, 45, 121, 0.6784313725490196);
+    color: white;
+}
