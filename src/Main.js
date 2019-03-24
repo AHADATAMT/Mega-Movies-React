@@ -71,25 +71,22 @@ export default class Main extends Component {
     render() {
         return (
             <div className="container-fluid">
-                <Loading isLoaded={this.state.isLoaded} />
-                <div className={this.state.isLoaded ? 'row' : 'invisible'}>
-                    <div className="col-12 col-xl-3">
+                <div className="row">
+                    <div className="col-12 col-sm-3">
                         <FilterContainer handleFilter={this.handleFilter} total_pages={this.state.total_pages} goTo={this.goTo} />
                     </div>
                     <div className="col-md-9">
-                        <div className="row">
+                        <Loading isLoaded={this.state.isLoaded} />
+                        <div className={this.state.isLoaded ? 'row' : 'invisible'}>
                             {this.state.movies.map((movie, index) => (
                                 <div className="col-xl-3 col-lg-4" key={index}>
                                     <MovieContainer {...movie} />
                                 </div>)
                             )}
                         </div>
-
                     </div>
                 </div>
             </div>
         )
-
-
     }
 }

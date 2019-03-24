@@ -7,7 +7,7 @@ export default class FilterContainer extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      sort_by: 'vote_average.desc',
+      sort_by: 'popularity.desc',
       year: { min: 2000, max: 2019 },
       rate: { min: 0, max: 10 },
     };
@@ -32,15 +32,15 @@ export default class FilterContainer extends Component {
   render() {
     return (
       <div className="position-relative w-100">
-        <div className="position-fixed">
+        <div className="position-xl-fixed">
           <h2>Controller</h2>
           <div className="col-12 mb-4">
             <p><strong>Sort by</strong></p>
             <select id="sortByInput" onChange={this.onChangeSortByInput} value={this.state.sort_by}>
               <option value="popularity.desc">Popularity &#8595;</option>
               <option value="popularity.asc">Popularity &#8593;</option>
-              <option value="vote_average.desc">Vote Average &#8593;</option>
-              <option value="vote_average.asc">Vote Average &#8595;</option>
+              <option value="vote_average.desc">Vote Average &#8595;</option>
+              <option value="vote_average.asc">Vote Average &#8593;</option>
             </select>
           </div>
           <div className="col-12 mb-4">

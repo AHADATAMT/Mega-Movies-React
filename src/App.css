@@ -49,7 +49,7 @@ a.page-btn {
     padding: 10px;
     background: #3f51b5;
     color: white;
-    margin: 4px 4px;
+    margin: 0.1rem;
     display: inline-block;
 }
 
@@ -72,4 +72,10 @@ a.currentPage{
     pointer-events: none;
     cursor: default;
     background: #1f2d79;
+}
+@media only screen and (min-width: 1200px) {
+    .position-xl-fixed{
+        position: fixed;
+        width: 24%
+    }
 }

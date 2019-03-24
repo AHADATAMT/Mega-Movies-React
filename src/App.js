@@ -1,16 +1,23 @@
 import React, { Component } from 'react';
-import Header from './Header';
-import Main from './Main';
+import { BrowserRouter, Route, Switch } from "react-router-dom";
+import Movie from './Movie';
+import Home from './Home';
+import Error from './Error';
+
+
 import 'bootstrap/dist/css/bootstrap.css';
 import './App.css';
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <Header />
-        <Main />
-      </div>
+      <BrowserRouter>
+        <Switch>
+          <Route path="/" component={Home} exact />
+          <Route path="/movie/:id" component={Movie} />
+          <Route component={Error} />
+        </Switch>
+      </BrowserRouter>
     );
   }
 }

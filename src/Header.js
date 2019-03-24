@@ -1,11 +1,12 @@
 import React, { Component } from 'react'
+import { Link } from "react-router-dom";
 
 export default class Header extends Component {
   render() {
     return (
       <div>
         <nav className="navbar navbar-expand-lg navbar-dark indigo mb-4">
-          <h3 className="navbar-brand">MEGA MOVIE</h3>
+          <Link to={'/'}><h3 className="navbar-brand">MEGA MOVIE</h3></Link> 
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <form className="form-inline ml-auto">
               <div className="md-form my-0">
