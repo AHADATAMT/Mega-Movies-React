@@ -108,7 +108,7 @@ a.currentPage{
 }
 
 .movie-card .card-body{
-    bottom: 0px;
+    bottom: 40px;
     background-image:linear-gradient(rgba(0, 0, 0, 0.10),black  70% );
     color: #cacaca;
     height: 140px;
@@ -126,4 +126,24 @@ a.currentPage{
 }
 .card a{
     color: white
+}
+
+.card-footer {
+    width: 100%;
+    height: 42px;
+    position: absolute;
+    bottom: 0;
+    background-color: black;
+    z-index: 0;
+}
+
+.cardFooter-btn {
+    background-color: black;
+    color: rgb(29, 58, 221);
+    font-weight: bold;
+}
+
+.cardFooter-btn:hover {
+    background-color: #2C2B2A;
+    color: white;
 }

@@ -20,7 +20,7 @@ export default class Movie extends Component {
                 console.log(data);
                 this.setState({
                     ...data
-                })
+                }, () => console.log("movie", this.state))
             }
         } catch (err) {
             alert(err);

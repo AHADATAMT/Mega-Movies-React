@@ -2,12 +2,14 @@ import React, { Component } from 'react'
 import 'bootstrap/dist/css/bootstrap.css';
 import { Link } from "react-router-dom";
 import  Poster from "./Poster";
-
+import TrailerModal from "./TrailerModal";
 export default class MovieContainer extends Component {
 
   limit = overview => {
     return overview.slice(0, 100) + '...';
   }
+
+ 
 
   render() {
     let { title, id, overview, vote_average, poster_path, release_date } = this.props;
@@ -21,6 +23,9 @@ export default class MovieContainer extends Component {
             <span><b>Rating</b> <br /> {vote_average}</span></p>
           <p className="card-text desc">{this.limit(overview)}</p>
         </div>
+        <div class="card-footer p-0 m-0">
+        <TrailerModal id={id} title={title} className=""/>
+         </div>
       </div>
     )
   }

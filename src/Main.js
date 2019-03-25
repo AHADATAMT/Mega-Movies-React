@@ -35,7 +35,8 @@ export default class Main extends Component {
             let response = await fetch(apiUrl);
             if (response.status === 200) {
                 let data = await response.json();
-                console.log(data);
+                console.log(data.results);
+
                 this.setState({
                     page: data.page,
                     movies: data.results,
@@ -69,18 +70,21 @@ export default class Main extends Component {
         })
     }
     render() {
+        
         return (
+            
             <div className="container-fluid">
                 <div className="row">
                     <div className="col-12 col-sm-4 col-xl-3">
                         <FilterContainer handleFilter={this.handleFilter} total_pages={this.state.total_pages} goTo={this.goTo} />
                     </div>
                     <div className="col-12 col-sm-8 col-xl-9">
+                    
                         <Loading isLoaded={this.state.isLoaded} />
                         <div className={this.state.isLoaded ? 'row' : 'invisible'}>
                             {this.state.movies.map((movie, index) => (
                                 <div className="col-sm-6 col-xl-3 col-lg-4" key={index}>
-                                    <MovieContainer {...movie} />
+                                    <MovieContainer key={index} {...movie} />
                                 </div>)
                             )}
                         </div>
