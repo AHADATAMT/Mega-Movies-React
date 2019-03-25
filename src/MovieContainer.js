@@ -12,7 +12,7 @@ export default class MovieContainer extends Component {
   render() {
     let { title, id, overview, vote_average, poster_path, release_date } = this.props;
     return (
-      <div id={id} className="card mb-2 movie-card position-relative">
+      <div id={id} className="card mb-4 movie-card position-relative">
         <Poster poster_path={poster_path} title={title} />
         <div className="card-body position-absolute">
           <Link to={'/movie/' + id}><h5 className="card-title">{title}</h5></Link>
