@@ -1,17 +1,10 @@
 # CoderSchool FTW - Mega-Movies-React
 
-Created with love by: Charles Lee
+Created with love by: `bmthang`
   
 This is a simple Canvas-based game that requires a solid understanding of the principles of JavaScript programming to customize. 
 
 Check it at [mtmovie.netlify.com/](https://mtmovie.netlify.com/)
-
-## Code Reviews
-
-This code was reviewed by @username and @otherusername. 
-
-* [Link to PR #X](#) - reviewed by @username.
-* [Link to PR #Y](#) - reviewed by @otherusername.   
 
 
 ## Required User Stories
